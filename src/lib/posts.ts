@@ -14,7 +14,16 @@ export type PostMeta = {
 
 export type Post = PostMeta & {
   contentHtml: string;
+  readingMinutes: number;
 };
+
+function readingMinutesFrom(content: string) {
+  const text = content.replace(/[#>*`_\-\[\]\(\)]/g, " ").trim();
+  const words = text.split(/\s+/).filter(Boolean).length;
+  const cjk = (text.match(/[\u4e00-\u9fff]/g) || []).length;
+  const units = words + cjk;
+  return Math.max(1, Math.ceil(units / 400));
+}
 
 function getPostFiles() {
   if (!fs.existsSync(postsDirectory)) return [];
@@ -61,5 +70,6 @@ export async function getPost(slug: string): Promise<Post | null> {
     date,
     summary: String(data.summary ?? ""),
     contentHtml,
+    readingMinutes: readingMinutesFrom(content),
   };
 }

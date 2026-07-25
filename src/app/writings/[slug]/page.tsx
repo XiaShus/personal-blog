@@ -35,7 +35,7 @@ export default async function WritingPage({ params }: Props) {
   return (
     <>
       <ScrollProgress />
-      <main className="relative mx-auto max-w-3xl flex-1 px-6 pb-24 pt-32 md:px-10">
+      <main className="relative mx-auto max-w-3xl flex-1 px-5 pb-24 pt-28 md:px-10 md:pt-32">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-72 bg-[radial-gradient(ellipse_at_top,rgba(212,164,90,0.10),transparent_65%)]"
@@ -55,7 +55,7 @@ export default async function WritingPage({ params }: Props) {
             <span aria-hidden>·</span>
             <time className="tabular-nums">{post.date}</time>
             <span aria-hidden>·</span>
-            <span>Essay</span>
+            <span>{post.readingMinutes} min read</span>
           </div>
           <h1 className="mt-5 font-[family-name:var(--font-display)] text-4xl leading-tight tracking-tight md:text-5xl">
             {post.title}

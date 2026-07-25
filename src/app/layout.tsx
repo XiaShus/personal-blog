@@ -29,9 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN" className={`${display.variable} ${sans.variable} h-full`}>
-      <body className="min-h-full flex flex-col antialiased">
+      <body className="flex min-h-full flex-col antialiased">
         <SiteHeader />
-        {children}
+        <div className="page-shell flex flex-1 flex-col">{children}</div>
       </body>
     </html>
   );

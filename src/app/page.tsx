@@ -15,31 +15,31 @@ export default function Home() {
 
       <section className="relative min-h-[100svh] overflow-hidden">
         <ParallaxForest />
-        <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-6 pb-20 pt-28 md:px-10 md:pb-28">
-          <p className="animate-rise font-[family-name:var(--font-display)] text-5xl tracking-tight text-ink sm:text-6xl md:text-7xl lg:text-8xl">
+        <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pb-16 pt-24 sm:px-6 sm:pb-20 md:px-10 md:pb-28 md:pt-28">
+          <p className="animate-rise font-[family-name:var(--font-display)] text-[2.75rem] leading-none tracking-tight text-ink sm:text-6xl md:text-7xl lg:text-8xl">
             夏树
           </p>
-          <h1 className="animate-rise-delay mt-5 max-w-2xl font-[family-name:var(--font-display)] text-2xl leading-snug tracking-tight text-ink/95 sm:text-3xl md:text-4xl">
+          <h1 className="animate-rise-delay mt-4 max-w-2xl font-[family-name:var(--font-display)] text-[1.35rem] leading-snug tracking-tight text-ink/95 sm:mt-5 sm:text-3xl md:text-4xl">
             在林缘写字，把工程与想法慢慢长出来。
           </h1>
-          <p className="animate-rise-delay-2 mt-5 max-w-xl text-base leading-relaxed text-muted md:text-lg">
+          <p className="animate-rise-delay-2 mt-4 max-w-xl text-[0.95rem] leading-relaxed text-muted sm:mt-5 sm:text-base md:text-lg">
             这里是关于后端、AIGC 与个人站点建设的公开笔记。
           </p>
-          <div className="animate-rise-delay-2 mt-10 flex flex-wrap items-center gap-4">
+          <div className="animate-rise-delay-2 mt-8 flex flex-wrap items-center gap-3 sm:mt-10 sm:gap-4">
             <Link
               href="/#writings"
-              className="btn-primary inline-flex items-center bg-accent px-5 py-3 text-sm font-medium text-[#1a1408]"
+              className="btn-primary inline-flex min-h-11 items-center bg-accent px-5 py-3 text-sm font-medium text-[#1a1408]"
             >
               阅读文章
             </Link>
             <Link
               href="/about"
-              className="inline-flex items-center border border-line px-5 py-3 text-sm text-ink transition hover:-translate-y-0.5 hover:border-accent hover:text-accent"
+              className="inline-flex min-h-11 items-center border border-line px-5 py-3 text-sm text-ink transition hover:-translate-y-0.5 hover:border-accent hover:text-accent"
             >
               关于我
             </Link>
           </div>
-          <p className="animate-rise-delay-2 mt-14 text-xs uppercase tracking-[0.22em] text-muted/70">
+          <p className="animate-rise-delay-2 mt-10 text-[10px] uppercase tracking-[0.22em] text-muted/70 sm:mt-14 sm:text-xs">
             scroll to explore
           </p>
         </div>
