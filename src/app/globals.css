@@ -262,18 +262,6 @@ a {
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
 }
 
-.post-row {
-  border-radius: 2px;
-  transition:
-    background 0.25s ease,
-    padding-left 0.3s ease;
-}
-
-.post-row:hover {
-  background: rgba(212, 164, 90, 0.04);
-  padding-left: 0.35rem;
-}
-
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation-duration: 0.35s;
