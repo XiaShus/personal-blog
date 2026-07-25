@@ -5,6 +5,12 @@ export function HeroField() {
       className="hero-field pointer-events-none absolute inset-0 overflow-hidden"
     >
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_20%,rgba(90,150,110,0.28),transparent_45%),radial-gradient(ellipse_at_80%_10%,rgba(212,164,90,0.18),transparent_40%),linear-gradient(180deg,#0c1411_0%,#101c16_45%,#0a100d_100%)]" />
+      <div className="film-grain absolute inset-0 opacity-[0.07]" />
+      <div className="fireflies absolute inset-0">
+        {Array.from({ length: 12 }).map((_, i) => (
+          <span key={i} className={`firefly firefly-${i + 1}`} />
+        ))}
+      </div>
       <svg
         className="absolute inset-x-0 bottom-0 h-[58%] w-full text-[#0a120e]"
         viewBox="0 0 1440 520"
@@ -16,7 +22,12 @@ export function HeroField() {
           className="opacity-80"
           d="M0 380 C220 320 340 420 520 360 C700 300 820 240 980 290 C1140 340 1240 390 1440 340 L1440 520 L0 520 Z"
         />
-        <g className="opacity-70" stroke="rgba(232,239,230,0.08)" strokeWidth="1" fill="none">
+        <g
+          className="opacity-70 tree-lines"
+          stroke="rgba(232,239,230,0.08)"
+          strokeWidth="1"
+          fill="none"
+        >
           <path d="M180 420 L180 260" />
           <path d="M160 290 Q180 250 200 290" />
           <path d="M420 450 L420 210" />
