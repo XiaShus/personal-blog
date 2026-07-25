@@ -16,12 +16,12 @@ export function SiteFooter() {
           <p className="text-xs uppercase tracking-[0.18em] text-muted">Navigate</p>
           <ul className="mt-4 space-y-2 text-sm">
             <li>
-              <Link href="/#writings" className="transition hover:text-accent">
+              <Link href="/#writings" className="footer-link">
                 Writings
               </Link>
             </li>
             <li>
-              <Link href="/about" className="transition hover:text-accent">
+              <Link href="/about" className="footer-link">
                 About
               </Link>
             </li>
@@ -30,7 +30,7 @@ export function SiteFooter() {
                 href="https://github.com/XiaShus/personal-blog"
                 target="_blank"
                 rel="noreferrer"
-                className="transition hover:text-accent"
+                className="footer-link"
               >
                 Source
               </a>

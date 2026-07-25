@@ -24,18 +24,18 @@ export function SiteHeader() {
     <header
       className={`fixed inset-x-0 top-0 z-30 transition-[background,backdrop-filter,border-color] duration-300 ${
         scrolled
-          ? "border-b border-line/80 bg-[#0c1411]/72 backdrop-blur-md"
+          ? "border-b border-line/80 bg-bg/75 backdrop-blur-md"
           : "border-b border-transparent bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 md:px-10 md:py-5">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5 pt-[max(0.875rem,env(safe-area-inset-top))] md:px-10 md:py-5">
         <Link
           href="/"
           className="font-[family-name:var(--font-display)] text-xl tracking-tight text-ink transition-colors hover:text-accent md:text-2xl"
         >
           夏树
         </Link>
-        <nav className="flex items-center gap-1 text-sm text-muted md:gap-2">
+        <nav className="flex items-center gap-0.5 text-sm text-muted md:gap-1">
           {links.map((link) => {
             const active =
               link.match === "about"
@@ -45,14 +45,14 @@ export function SiteHeader() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`nav-link relative px-3 py-2 transition-colors ${
+                className={`group relative px-3 py-2 transition-colors ${
                   active ? "text-ink" : "hover:text-ink"
                 }`}
               >
                 {link.label}
                 <span
-                  className={`nav-underline absolute bottom-1 left-3 right-3 h-px origin-left bg-accent transition-transform duration-300 ${
-                    active ? "scale-x-100" : "scale-x-0"
+                  className={`absolute bottom-1 left-3 right-3 h-px origin-left bg-accent transition-transform duration-300 ${
+                    active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
                   }`}
                 />
               </Link>

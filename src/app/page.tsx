@@ -48,11 +48,11 @@ export default function Home() {
 
       {featured ? (
         <section className="border-t border-line">
-          <div className="mx-auto max-w-6xl px-5 py-12 md:px-10 md:py-16">
+          <div className="mx-auto max-w-6xl px-5 py-10 md:px-10 md:py-14">
             <Reveal>
               <Link
                 href={`/writings/${featured.slug}`}
-                className="featured-note group block border border-line px-5 py-6 transition md:px-8 md:py-8"
+                className="featured-note group block border border-line px-5 py-6 transition duration-300 md:px-8 md:py-7"
               >
                 <p className="text-xs uppercase tracking-[0.2em] text-accent">
                   Featured note
