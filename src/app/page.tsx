@@ -3,7 +3,6 @@ import { AmbientCursor } from "@/components/AmbientCursor";
 import { ParallaxForest } from "@/components/ParallaxForest";
 import { Reveal } from "@/components/Reveal";
 import { ScrollProgress } from "@/components/ScrollProgress";
-import { SiteFooter } from "@/components/SiteFooter";
 import { getAllPosts } from "@/lib/posts";
 
 export default function Home() {
@@ -113,8 +112,6 @@ export default function Home() {
           </ol>
         </div>
       </section>
-
-      <SiteFooter />
     </div>
   );
 }

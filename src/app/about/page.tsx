@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 import { ScrollProgress } from "@/components/ScrollProgress";
-import { SiteFooter } from "@/components/SiteFooter";
-
 export const metadata: Metadata = {
   title: "About",
 };
@@ -101,7 +99,6 @@ export default function AboutPage() {
           </Reveal>
         </div>
       </main>
-      <SiteFooter />
     </>
   );
 }
