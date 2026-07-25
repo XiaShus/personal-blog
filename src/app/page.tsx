@@ -48,7 +48,8 @@ export default function Home() {
       <section id="writings" className="border-t border-line bg-bg-elevated">
         <div className="mx-auto max-w-6xl px-6 py-20 md:px-10 md:py-28">
           <Reveal>
-            <h2 className="font-[family-name:var(--font-display)] text-3xl tracking-tight md:text-4xl">
+            <p className="text-xs uppercase tracking-[0.22em] text-muted">Index</p>
+            <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl tracking-tight md:text-4xl">
               Writings
             </h2>
             <p className="mt-3 max-w-xl text-muted">
