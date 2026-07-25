@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, Fraunces } from "next/font/google";
+import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import "./globals.css";
 
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body className="flex min-h-full flex-col antialiased">
         <SiteHeader />
         <div className="page-shell flex flex-1 flex-col">{children}</div>
+        <SiteFooter />
       </body>
     </html>
   );

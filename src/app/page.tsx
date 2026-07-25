@@ -3,10 +3,12 @@ import { AmbientCursor } from "@/components/AmbientCursor";
 import { ParallaxForest } from "@/components/ParallaxForest";
 import { Reveal } from "@/components/Reveal";
 import { ScrollProgress } from "@/components/ScrollProgress";
+import { SiteFooter } from "@/components/SiteFooter";
 import { getAllPosts } from "@/lib/posts";
 
 export default function Home() {
   const posts = getAllPosts();
+  const featured = posts[0];
 
   return (
     <div className="flex flex-1 flex-col">
@@ -45,8 +47,34 @@ export default function Home() {
         </div>
       </section>
 
+      {featured ? (
+        <section className="border-t border-line">
+          <div className="mx-auto max-w-6xl px-5 py-12 md:px-10 md:py-16">
+            <Reveal>
+              <Link
+                href={`/writings/${featured.slug}`}
+                className="featured-note group block border border-line px-5 py-6 transition md:px-8 md:py-8"
+              >
+                <p className="text-xs uppercase tracking-[0.2em] text-accent">
+                  Featured note
+                </p>
+                <h2 className="mt-3 font-[family-name:var(--font-display)] text-2xl tracking-tight transition group-hover:text-accent md:text-3xl">
+                  {featured.title}
+                </h2>
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted md:text-base">
+                  {featured.summary}
+                </p>
+                <p className="mt-5 text-sm text-muted transition group-hover:text-accent">
+                  继续阅读 →
+                </p>
+              </Link>
+            </Reveal>
+          </div>
+        </section>
+      ) : null}
+
       <section id="writings" className="border-t border-line bg-bg-elevated">
-        <div className="mx-auto max-w-6xl px-6 py-20 md:px-10 md:py-28">
+        <div className="mx-auto max-w-6xl px-5 py-20 md:px-10 md:py-28">
           <Reveal>
             <p className="text-xs uppercase tracking-[0.22em] text-muted">Index</p>
             <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl tracking-tight md:text-4xl">
@@ -86,12 +114,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-line">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-8 text-sm text-muted md:px-10">
-          <span>© {new Date().getFullYear()} 夏树</span>
-          <span>Built with Next.js · Deployed on Vercel</span>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
