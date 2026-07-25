@@ -29,10 +29,15 @@ export function getAllPosts(): PostMeta[] {
       const slug = file.replace(/\.md$/, "");
       const raw = fs.readFileSync(path.join(postsDirectory, file), "utf8");
       const { data } = matter(raw);
+      const dateValue = data.date;
+      const date =
+        dateValue instanceof Date
+          ? dateValue.toISOString().slice(0, 10)
+          : String(dateValue ?? "");
       return {
         slug,
         title: String(data.title ?? slug),
-        date: String(data.date ?? ""),
+        date,
         summary: String(data.summary ?? ""),
       };
     })
@@ -45,10 +50,15 @@ export async function getPost(slug: string): Promise<Post | null> {
   const raw = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(raw);
   const contentHtml = await marked.parse(content);
+  const dateValue = data.date;
+  const date =
+    dateValue instanceof Date
+      ? dateValue.toISOString().slice(0, 10)
+      : String(dateValue ?? "");
   return {
     slug,
     title: String(data.title ?? slug),
-    date: String(data.date ?? ""),
+    date,
     summary: String(data.summary ?? ""),
     contentHtml,
   };
