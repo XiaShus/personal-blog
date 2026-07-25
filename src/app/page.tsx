@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { AmbientCursor } from "@/components/AmbientCursor";
-import { HeroField } from "@/components/HeroField";
+import { ParallaxForest } from "@/components/ParallaxForest";
 import { Reveal } from "@/components/Reveal";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { getAllPosts } from "@/lib/posts";
@@ -14,7 +14,7 @@ export default function Home() {
       <AmbientCursor />
 
       <section className="relative min-h-[100svh] overflow-hidden">
-        <HeroField />
+        <ParallaxForest />
         <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-6 pb-20 pt-28 md:px-10 md:pb-28">
           <p className="animate-rise font-[family-name:var(--font-display)] text-5xl tracking-tight text-ink sm:text-6xl md:text-7xl lg:text-8xl">
             夏树
@@ -55,14 +55,17 @@ export default function Home() {
               按时间排列的短文。主题会在工程与创作之间来回切换。
             </p>
           </Reveal>
-          <ul className="mt-12 divide-y divide-line border-y border-line">
+          <ol className="mt-12 divide-y divide-line border-y border-line">
             {posts.map((post, index) => (
               <li key={post.slug}>
                 <Reveal delayMs={index * 80}>
                   <Link
                     href={`/writings/${post.slug}`}
-                    className="post-row group flex flex-col gap-2 py-7 transition-[padding] duration-300 md:flex-row md:items-baseline md:justify-between md:gap-10"
+                    className="post-row group grid grid-cols-[auto_1fr] gap-x-5 gap-y-2 py-7 transition-[padding] duration-300 md:grid-cols-[3rem_1fr_auto] md:items-baseline md:gap-x-8"
                   >
+                    <span className="pt-1 font-[family-name:var(--font-display)] text-sm tabular-nums text-accent/80 md:pt-0 md:text-base">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
                     <div>
                       <h3 className="font-[family-name:var(--font-display)] text-xl tracking-tight transition group-hover:text-accent md:text-2xl">
                         {post.title}
@@ -71,14 +74,14 @@ export default function Home() {
                         {post.summary}
                       </p>
                     </div>
-                    <time className="shrink-0 text-sm text-muted/80 tabular-nums transition group-hover:text-accent">
+                    <time className="col-start-2 shrink-0 text-sm text-muted/80 tabular-nums transition group-hover:text-accent md:col-start-auto">
                       {post.date}
                     </time>
                   </Link>
                 </Reveal>
               </li>
             ))}
-          </ul>
+          </ol>
         </div>
       </section>
 

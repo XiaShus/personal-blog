@@ -115,10 +115,6 @@ a {
   animation: sheen 5s ease-in-out infinite alternate;
 }
 
-.hero-field {
-  animation: drift 18s ease-in-out infinite alternate;
-}
-
 .film-grain {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
   background-size: 180px 180px;
@@ -231,10 +227,34 @@ a {
   }
 }
 
+.article-masthead {
+  animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.article-deck {
+  border-left: 2px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  padding-left: 1rem;
+}
+
 .prose-blog {
   max-width: 42rem;
   line-height: 1.8;
   color: var(--ink);
+}
+
+.prose-editorial {
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+
+.prose-editorial > p:first-child::first-letter {
+  float: left;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 3.4rem;
+  line-height: 0.85;
+  padding-right: 0.55rem;
+  padding-top: 0.2rem;
+  color: var(--accent);
 }
 
 .prose-blog h2,
@@ -246,12 +266,12 @@ a {
 }
 
 .prose-blog p {
-  margin: 0 0 1.15rem;
+  margin: 0 0 1.25rem;
   color: color-mix(in srgb, var(--ink) 88%, transparent);
 }
 
 .prose-blog ul {
-  margin: 0 0 1.15rem;
+  margin: 0 0 1.25rem;
   padding-left: 1.2rem;
   color: color-mix(in srgb, var(--ink) 88%, transparent);
 }
@@ -264,4 +284,12 @@ a {
   color: var(--accent);
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+.prose-editorial blockquote {
+  margin: 1.75rem 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 2px solid var(--accent);
+  color: var(--muted);
+  font-style: italic;
 }
